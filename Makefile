@@ -1,3 +1,8 @@
+# CS530 Assignment 2 - Two-Pass SIC/XE Assembler
+# Team: Kristen Waterford (cssc2556, Red ID: 826655811)
+#        Duncan Hugelmaier (cssc2523, Red ID: 131941547)
+
+
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
 

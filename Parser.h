@@ -13,7 +13,6 @@ public:
 
 private:
     static std::string trim(const std::string& s);
-    static bool isOpcodeOrDirective(const std::string& token);
 };
 
 #endif

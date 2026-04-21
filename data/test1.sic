@@ -1,0 +1,7 @@
+SIMPLE  START   1000
+FIRST   LDA     NUM
+        STA     RESULT
+        RSUB
+NUM     WORD    5
+RESULT  RESW    1
+        END     FIRST

@@ -1,0 +1,11 @@
+BASETST START   0
+FIRST   LDB     #BIGTAB
+        BASE    BIGTAB
+        LDA     BIGTAB
+        STA     TARGET
+        NOBASE
+        RSUB
+PAD     RESB    5000
+BIGTAB  RESW    1
+TARGET  RESW    1
+        END     FIRST

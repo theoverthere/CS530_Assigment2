@@ -1,0 +1,9 @@
+BYTETST START   0
+FIRST   LDA     ALPHA
+        STA     BETA
+        RSUB
+ALPHA   BYTE    C'EOF'
+HEXVAL  BYTE    X'F1'
+BETA    RESB    4
+GAMMA   RESW    2
+        END     FIRST

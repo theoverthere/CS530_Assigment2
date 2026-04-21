@@ -1,0 +1,8 @@
+FMT2    START   0
+FIRST   CLEAR   X
+        CLEAR   A
+        ADDR    A,X
+        COMPR   A,X
+        TIXR    T
+        RSUB
+        END     FIRST

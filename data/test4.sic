@@ -1,0 +1,11 @@
+MODES   START   1000
+FIRST   LDA     #5
+        LDB     #TABLE
+        LDA     @VALUE
+        ADD     TABLE,X
+        +JSUB   SUBRTN
+        RSUB
+VALUE   WORD    10
+TABLE   RESW    4
+SUBRTN  RSUB
+        END     FIRST
