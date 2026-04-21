@@ -1,3 +1,6 @@
+// CS530 Assignment 2 - Two-Pass SIC/XE Assembler
+// Team: Kristen Waterford (cssc2556, Red ID: 826655811)
+//        Duncan Hugelmaier (cssc2523, Red ID: 131941547)
 #ifndef ASSEMBLER_H
 #define ASSEMBLER_H
 
@@ -29,6 +32,8 @@ public:
 private:
     std::vector<SourceLine> lines;
     std::map<std::string, int> symtab;
+    std::map<std::string, int> littab;
+    std::vector<std::string> pendingLits;
 
     int startAddress = 0;
     int programLength = 0;
@@ -51,6 +56,17 @@ private:
     int getByteLength(const std::string& operand) const;
     int parseNumber(const std::string& text) const;
     std::string toUpper(const std::string& s) const;
+
+    struct OperandInfo {
+        int n = 1;               // indirect bit
+        int i = 1;               // immediate bit
+        int x = 0;               // index bit
+        int targetAddr = 0;      // resolved address or immediate value
+        bool immConst = false;   // true when operand is #<number> (no symbol lookup needed)
+        bool valid = true;       // false if symbol/literal not found
+    };
+
+    OperandInfo parseOperandMode(const std::string& operand, int lineAddr) const;
 };
 
 #endif
